@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Clase Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Plan de Clase - Computacion Aplicada</h1>
+    </header>
+
+    <main class="contenedor-flex">
+        <section class="bloque">
+            <h2>Competencias</h2>
+            <article>
+                Desarrolla algoritmos basicos y comprende la estructura de un programa
+            </article>
+        </section>
+
+        <section class="bloque">
+            <h2>Actividades</h2>
+            <article>
+                Practica de codigo en el laboratorio utilizando Visual Studio Code
+            </article>
+        </section>
+
+        <section class="bloque">
+            <h2>Evaluacion</h2>
+            <article>
+                Rubrica de revision de codigo funcional y correcta indentacion
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Docente Practicante: Evelyn Garcia H.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Practico: Layout y Flexbox con PRIMM</title>
+    <style>
+        /* Estilos generales del entorno de trabajo */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #334155;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+
+        nav a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .menu-flexible {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================================
+           [ZONA DE PRUEBA 1 - FASE PREDICT & INVESTIGATE]
+           Instruccion: Comenta o borra temporalmente 'display: flex;' 
+           para ver como cambia el comportamiento de las tarjetas de abajo.
+           ========================================================== */
+        .contenedor-principal {
+            display: flex; 
+            gap: 15px;      
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tarjeta-modulo {
+            flex: 1;
+            min-width: 250px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        #pie-principal {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 12px;
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Logotipo y Titulo Principal</h1>
+    </header>
+
+    <nav class="menu-flexible">
+        <a href="#">🏠 Inicio</a>
+        <a href="#">📚 Modulos</a>
+        <a href="#">⚙️ Configuracion</a>
+    </nav>
+
+    <!-- Contenedor principal para aplicar la metodologia PRIMM -->
+    <main class="contenedor-principal">
+        
+        <section class="tarjeta-modulo">
+            <h3>Modulo 1</h3>
+            <p>Contenido inicial de prueba para analizar el comportamiento horizontal de Flexbox.</p>
+        </section>
+
+        <section class="tarjeta-modulo">
+            <h3>Modulo 2</h3>
+            <p>Segundo bloque de contenido para verificar el espaciado automatico mediante la propiedad <code>gap</code>.</p>
+        </section>
+
+        <!-- ==========================================================
+           [ZONA DE PRUEBA 2 - FASE MAKE]
+           Copia aqui abajo una etiqueta <section class="tarjeta-modulo"> 
+           adicional y cambiale el texto a "Modulo 3" para probar el salto automatico.
+           ========================================================== -->
+
+    </main>
+
+    <footer id="pie-principal">
+        Derechos Reservados &copy; 2026 — Practica Guiada sola
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Práctico: Layout y Flexbox</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      padding: 20px;
+      color: #333;
+    }
+
+    /* Encabezado */
+    header {
+      background-color: #141e30;
+      color: #ffffff;
+      text-align: center;
+      padding: 35px 20px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    /* Barra de navegacion */
+    nav {
+      background-color: #24344d;
+      padding: 12px 25px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Contenedor principal con Flexbox */
+    .contenedor-principal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    /* Clase base para las tarjetas */
+    .tarjeta-modulo {
+      flex: 1 1 250px; /* Permite repartir el espacio y bajar a otra fila si no caben */
+      background-color: #ffffff;
+      border: 1px solid #dce1e7;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    }
+
+    .tarjeta-modulo h3 {
+      margin-bottom: 12px;
+      color: #1a2536;
+      font-size: 18px;
+    }
+
+    .tarjeta-modulo p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    /* Clase adicional para el fondo celeste claro */
+    .tarjeta-nueva {
+      background-color: #e0f2fe;
+      border: 1.5px dashed #38bdf8;
+      border-radius: 12px;
+    }
+
+    /* Pie de página */
+    footer {
+      background-color: #141e30;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 20px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Logotipo y Titulo Principal</h1>
+  </header>
+
+  <nav>
+    <a href="#">🏠 Inicio</a>
+    <a href="#">📑 Modulos</a>
+    <a href="#">⚙️ Configuracion</a>
+  </nav>
+
+  <main class="contenedor-principal">
+    <!-- Modulo 1 -->
+    <section class="tarjeta-modulo">
+      <h3>Modulo 1</h3>
+      <p>Contenido inicial de prueba para analizar el comportamiento horizontal de Flexbox.</p>
+    </section>
+
+    <!-- Modulo 2 -->
+    <section class="tarjeta-modulo">
+      <h3>Modulo 2</h3>
+      <p>Segundo bloque de contenido para verificar el espaciado automatico mediante la propiedad gap.</p>
+    </section>
+
+    <!-- Modulo 3 (Nuevo) -->
+    <section class="tarjeta-modulo tarjeta-nueva">
+      <h3>Modulo 3</h3>
+      <p>Este tercer bloque demuestra la consistencia responsiva gracias a flex-wrap: wrap. Ademas, incluye un diseño personalizado mediante una clase adicional.</p>
+    </section>
+
+    <!-- Modulo 4 (Nuevo) -->
+    <section class="tarjeta-modulo tarjeta-nueva">
+      <h3>Modulo 4</h3>
+      <p>Cuarto bloque agregado con fondo celeste claro que conserva la estructura base y se adapta automaticamente al reducir el ancho de la ventana.</p>
+    </section>
+  </main>
+
+  <footer>
+    Derechos Reservados © 2026 — Practica Guiada sola
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulos Flexbox</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="pagina-contenedor">
+        <!-- Contenedor principal de los modulos -->
+        <main class="contenedor-principal">
+            <section class="modulo">
+                <h2>Modulo 1</h2>
+                <p>Contenido principal estructurado mediante clases y Flexbox</p>
+            </section>
+
+            <section class="modulo">
+                <h2>Modulo 2</h2>
+                <p>Espaciado controlado perfectamente mediante la propiedad</p>
+            </section>
+
+            <section class="modulo">
+                <h2>Modulo 3</h2>
+                <p>Trabajamos en este modulo: Alicia, Luis y Antonieta</p>
+            </section>
+        </main>
+
+        <!-- Pie de pagina inferior -->
+        <footer class="pie-principal">
+            <p>Derechos Reservados © 2026 - Entorno de Practica</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Clase Digital - Computación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Plan de Clase: Introducción al Control de Versiones</h1>
+        <p>Aprendiendo Git y GitHub de forma visual y práctica</p>
+    </header>
+
+    <main class="content-container">
+        <section class="card">
+            <h2>Objetivo de la Sesión</h2>
+            <p>Comprender el funcionamiento de los commits y las ramas mediante analogías cotidianas y simuladores interactivos.</p>
+        </section>
+
+        <section class="card">
+            <h2>Fases de la Práctica</h2>
+            <ul>
+                <li>Fase 1: Simulación interactiva (Learn Git Branching)</li>
+                <li>Fase 2: Estructuración de repositorio local y remoto</li>
+                <li>Fase 3: Trabajo con ramas (main y feature/estilos)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 - Módulo de Tecnologías de la Información</p>
+    </footer>
+</body>
+</html>
