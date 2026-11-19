@@ -1,13 +1,16 @@
 import { motion, MotionConfig } from "framer-motion";
 import HeaderClase from "./components/HeaderClase";
-import ObjetivosCard from "./components/ObjetivosCard";
+import ObjetivosCard from "./components/ObjetivoCard";
 import ActividadItem from "./components/ActividadItem";
+import ListaActividades from "./components/ListaActividades";
 
 const actividadesIniciales = [
   { id: 1, titulo: "Exploración guiada del concepto", duracion: "10 min" },
   { id: 2, titulo: "Práctica en equipo con ejemplos cotidianos", duracion: "20 min" },
   { id: 3, titulo: "Puesta en común y cierre reflexivo", duracion: "10 min" },
+
 ];
+import EvaluacionForm from './components/EvaluacionForm';
 
 export default function App() {
   return (
@@ -48,7 +51,12 @@ export default function App() {
             ))}
           </motion.div>
         </section>
+        <ListaActividades />
+        
+<EvaluacionForm />
+        
       </main>
+    
     </MotionConfig>
   );
 }

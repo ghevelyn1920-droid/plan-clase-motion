@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function ObjetivosCard({ objetivos = [] }) {
+export default function ObjetivoCard({ objetivos = [] }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 12 }}
