@@ -5,8 +5,9 @@ const NOCODB_URL = import.meta.env.VITE_NOCODB_URL;
 const API_TOKEN = import.meta.env.VITE_NOCODB_TOKEN;
 
 export default function EvaluacionForm({ onRegistroCreado }) {
-  const [estudiante, setEstudiante] = useState('');
-  const [actividad, setActividad] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [seccion, setSeccion] = useState('');
+  const [respuestaTexto, setRespuestaTexto] = useState('');
   const [puntaje, setPuntaje] = useState('');
   const [enviando, setEnviando] = useState(false);
   const [mensaje, setMensaje] = useState(null);
@@ -17,22 +18,23 @@ export default function EvaluacionForm({ onRegistroCreado }) {
     setMensaje(null);
     setError(null);
 
-    if (!estudiante.trim() || !actividad.trim()) {
-      setError('Completa el nombre del estudiante y la actividad.');
+    if (!nombre.trim() || !seccion.trim() || !respuestaTexto.trim()) {
+      setError('Completa el nombre, la sección y la respuesta.');
       return;
     }
 
     try {
       setEnviando(true);
 
-      // Ajusta las claves del objeto si en tu tabla de NocoDB se llaman distinto
       const payload = {
-        estudiante: estudiante.trim(),
-        actividad: actividad.trim(),
-        puntaje: puntaje === '' ? 0 : Number(puntaje),
+        Nombre: nombre.trim(),
+        Seccion: seccion.trim(),
+        Respuesta: respuestaTexto.trim(),
+        Puntaje: puntaje === '' ? 0 : Number(puntaje),
+        Fecha: new Date().toLocaleDateString('es-GT'),
       };
 
-      const respuesta = await fetch(NOCODB_URL, {
+      const res = await fetch(NOCODB_URL, {
         method: 'POST',
         headers: {
           'xc-token': API_TOKEN,
@@ -41,13 +43,14 @@ export default function EvaluacionForm({ onRegistroCreado }) {
         body: JSON.stringify(payload),
       });
 
-      if (!respuesta.ok) {
-        throw new Error(`Error ${respuesta.status} al guardar en NocoDB`);
+      if (!res.ok) {
+        throw new Error(`Error ${res.status} al guardar en NocoDB`);
       }
 
-      const data = await respuesta.json();
-      setEstudiante('');
-      setActividad('');
+      const data = await res.json();
+      setNombre('');
+      setSeccion('');
+      setRespuestaTexto('');
       setPuntaje('');
       setMensaje('Registro guardado correctamente en NocoDB.');
 
@@ -68,28 +71,38 @@ export default function EvaluacionForm({ onRegistroCreado }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <h2>Registro de Evaluación</h2>
+      <h2>Registro de Evaluación — Condicionales (if/else)</h2>
 
       <form onSubmit={manejarEnvio}>
         <div>
-          <label htmlFor="estudiante">Estudiante:</label>
+          <label htmlFor="nombre">Nombre del estudiante:</label>
           <input
-            id="estudiante"
+            id="nombre"
             type="text"
-            value={estudiante}
-            onChange={(e) => setEstudiante(e.target.value)}
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
             placeholder="Ej. Ana López"
           />
         </div>
 
         <div>
-          <label htmlFor="actividad">Actividad o tema TIC:</label>
+          <label htmlFor="seccion">Sección:</label>
           <input
-            id="actividad"
+            id="seccion"
             type="text"
-            value={actividad}
-            onChange={(e) => setActividad(e.target.value)}
-            placeholder="Ej. Estructura HTML y CSS"
+            value={seccion}
+            onChange={(e) => setSeccion(e.target.value)}
+            placeholder="Ej. 3ro Básico A"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="respuesta">Respuesta / Filtro de acceso (if/else):</label>
+          <textarea
+            id="respuesta"
+            value={respuestaTexto}
+            onChange={(e) => setRespuestaTexto(e.target.value)}
+            placeholder="Escribe tu condición o respuesta..."
           />
         </div>
 

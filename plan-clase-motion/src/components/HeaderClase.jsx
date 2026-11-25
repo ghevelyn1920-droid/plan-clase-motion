@@ -19,24 +19,34 @@ export default function HeaderClase({ etiqueta, titulo, subtitulo }) {
       <span
         style={{
           display: "inline-block",
-          backgroundColor: "#1e3a5f",
-          color: "#fbbf24",
-          fontWeight: "700",
           fontSize: "0.75rem",
+          fontWeight: "600",
           letterSpacing: "0.08em",
           padding: "0.3rem 0.75rem",
           borderRadius: "999px",
           textTransform: "uppercase",
+          backgroundColor: "rgba(255, 255, 255, 0.12)",
+          color: "#e2e8f0",
         }}
       >
         {etiqueta}
       </span>
-      <h1 style={{ margin: "0.75rem 0 0.4rem", fontSize: "1.85rem" }}>
+
+      <h1
+        style={{
+          margin: "0.75rem 0 0.4rem",
+          fontSize: "1.85rem",
+          color: "#ffffff",
+          fontWeight: "700",
+        }}
+      >
         {titulo}
       </h1>
+
       <p style={{ margin: 0, color: "#cbd5e1", fontSize: "0.95rem" }}>
         {subtitulo}
       </p>
     </motion.header>
   );
 }
+
