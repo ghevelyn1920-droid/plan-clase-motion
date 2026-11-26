@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const NOCODB_URL = import.meta.env.VITE_NOCODB_URL;
-const API_TOKEN = import.meta.env.VITE_NOCODB_TOKEN;
+const NOCODB_URL = import.meta.env.VITE_NOCODB_URL || 'https://app.nocodb.com/api/v2/tables/m1lgc0ac9gclb1v/records';
+const API_TOKEN = import.meta.env.VITE_NOCODB_TOKEN || 'nc_pat_qj3iqFKJJsinuv4T146FBVznvSgMwTAVqdrf0Tqf';
 
 export default function EvaluacionForm({ onRegistroCreado }) {
   const [nombre, setNombre] = useState('');
