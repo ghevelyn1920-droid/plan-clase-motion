@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function ActividadItem({ titulo, duracion }) {
-  const [completada, setCompletada] = useState(false);
+export default function ActividadItem({ titulo, duracion, contenido, completada }) {
+  const [abierto, setAbierto] = useState(false);
 
   return (
     <motion.div
@@ -45,6 +45,43 @@ export default function ActividadItem({ titulo, duracion }) {
       >
         {completada ? "✓ Completada" : "Marcar"}
       </span>
+      <div style={{ marginTop: "0.5rem" }}>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setAbierto((prev) => !prev);
+          }}
+          style={{
+            padding: "0.25rem 0.65rem",
+            fontSize: "0.8rem",
+            cursor: "pointer"
+          }}
+        >
+          {abierto ? "Ocultar guía" : "Ver guía"}
+        </button>
+
+        <AnimatePresence initial={false}>
+          {abierto && contenido && (
+            <motion.div
+              key="guia"
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                marginTop: "0.5rem",
+                paddingTop: "0.5rem",
+                borderTop: "1px solid #cbd5e1",
+                fontSize: "0.9rem"
+              }}
+            >
+              {contenido}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.div>
   );
 }
