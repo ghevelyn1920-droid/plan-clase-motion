@@ -27,7 +27,7 @@ const actividadesIniciales = [
       "Compartan una duda de la práctica y comenten cómo una animación breve ayuda a entender mejor el comportamiento de la aplicación."
   }
 ];
-];
+
 import EvaluacionForm from './components/EvaluacionForm';
 
 export default function App() {
