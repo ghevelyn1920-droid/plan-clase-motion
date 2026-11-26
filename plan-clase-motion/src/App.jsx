@@ -5,10 +5,28 @@ import ActividadItem from "./components/ActividadItem";
 import ListaActividades from "./components/ListaActividades";
 
 const actividadesIniciales = [
-  { id: 1, titulo: "Exploración guiada del concepto", duracion: "10 min" },
-  { id: 2, titulo: "Práctica en equipo con ejemplos cotidianos", duracion: "20 min" },
-  { id: 3, titulo: "Puesta en común y cierre reflexivo", duracion: "10 min" },
-
+  {
+    id: 1,
+    titulo: "Exploración guiada del concepto",
+    duracion: "10 min",
+    contenido:
+      "Observa cómo cambia la interfaz al activar o desactivar el estado. Identifica qué elemento cambia primero y qué condición dispara el cambio."
+  },
+  {
+    id: 2,
+    titulo: "Práctica en equipo con ejemplos cotidianos",
+    duracion: "20 min",
+    contenido:
+      "En pareja, redacten dos ejemplos cotidianos con condicionales (si se cumple X, pasa Y; si no, pasa Z) y expliquen cómo se representan en lógica."
+  },
+  {
+    id: 3,
+    titulo: "Puesta en común y cierre reflexivo",
+    duracion: "10 min",
+    contenido:
+      "Compartan una duda de la práctica y comenten cómo una animación breve ayuda a entender mejor el comportamiento de la aplicación."
+  }
+];
 ];
 import EvaluacionForm from './components/EvaluacionForm';
 
